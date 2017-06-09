@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { BarModule } from './bar/bar.module';
+import { TimelineModule } from './timeline/timeline.module';
 
 @NgModule({
   declarations: [
@@ -10,7 +10,7 @@ import { BarModule } from './bar/bar.module';
   ],
   imports: [
     BrowserModule,
-    BarModule
+    TimelineModule
   ],
   providers: [],
   bootstrap: [AppComponent]

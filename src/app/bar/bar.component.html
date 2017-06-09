@@ -1,0 +1,19 @@
+<svg
+  attr.viewBox = "0 0 {{width}} 20">
+  <g
+     attr.transform = "translate({{width*parsedBar?.startPoint}})">
+
+    <rect
+      rx = 10
+      ry = 10
+      [attr.width] = width*parsedBar?.width
+      height = 100%>    
+   </rect>
+   
+   <text
+     x = 10
+     y = 80%>
+     {{parsedBar?.label}}
+   </text>
+ </g>
+</svg>

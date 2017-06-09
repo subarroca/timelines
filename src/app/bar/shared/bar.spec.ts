@@ -1,6 +1,6 @@
 import { TestBed, inject } from '@angular/core/testing';
 
-import { BarGroupService } from './bar-group.service';
+import { BarService } from './bar-group.service';
 import { Bar } from './bar';
 
 
@@ -15,7 +15,7 @@ describe('Model: Bar', () => {
   }
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [BarGroupService]
+      providers: [BarService]
     });
   });
 

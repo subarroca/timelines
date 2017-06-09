@@ -2,11 +2,11 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 
-import { Bar } from './bar';
+import { Bar } from '../../bar/shared/bar';
 
 
 @Injectable()
-export class BarGroupService {
+export class BarService {
   private startDateSubject: BehaviorSubject<Date> = new BehaviorSubject<Date>(new Date());
   startDate$: Observable<Date> = this.startDateSubject.asObservable();
 

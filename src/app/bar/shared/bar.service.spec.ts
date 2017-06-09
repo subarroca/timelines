@@ -1,6 +1,6 @@
 import { TestBed, inject } from '@angular/core/testing';
 
-import { BarGroupService } from './bar-group.service';
+import { BarService } from './bar-group.service';
 import { Bar } from './bar';
 
 describe('Service: BarGroup', () => {
@@ -13,15 +13,15 @@ describe('Service: BarGroup', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [BarGroupService]
+      providers: [BarService]
     });
   });
 
-  it('should be created', inject([BarGroupService], (service: BarGroupService) => {
+  it('should be created', inject([BarService], (service: BarService) => {
     expect(service).toBeTruthy();
   }));
 
-  it('should have a start date and update observable', inject([BarGroupService], (service: BarGroupService) => {
+  it('should have a start date and update observable', inject([BarService], (service: BarService) => {
     let startDate;
     service.startDate = day0;
     service.startDate$.subscribe(date => startDate = date);
@@ -30,7 +30,7 @@ describe('Service: BarGroup', () => {
     expect(startDate).toBe(day0);
   }));
 
-  it('should have an end date and update observable', inject([BarGroupService], (service: BarGroupService) => {
+  it('should have an end date and update observable', inject([BarService], (service: BarService) => {
     let endDate;
     service.endDate = day100;
     service.endDate$.subscribe(date => endDate = date);
@@ -39,7 +39,7 @@ describe('Service: BarGroup', () => {
     expect(endDate).toBe(day100);
   }));
 
-  it('should return a percent for given date', inject([BarGroupService], (service: BarGroupService) => {
+  it('should return a percent for given date', inject([BarService], (service: BarService) => {
     let point;
     service.startDate = day0;
     service.endDate = day100;
@@ -69,7 +69,7 @@ describe('Service: BarGroup', () => {
     };
 
 
-    it('should return a copy of the Bar', inject([BarGroupService], (service: BarGroupService) => {
+    it('should return a copy of the Bar', inject([BarService], (service: BarService) => {
       const originalBar = new Bar(barFull);
       const parsedBar = service.parseBar(originalBar);
 
@@ -79,7 +79,7 @@ describe('Service: BarGroup', () => {
       expect(originalBar.endDate).toBe(parsedBar.endDate);
     }));
 
-    it('should return start and end points based on service range', inject([BarGroupService], (service: BarGroupService) => {
+    it('should return start and end points based on service range', inject([BarService], (service: BarService) => {
       service.endDate = day100;
       service.startDate = day0;
 
@@ -90,7 +90,7 @@ describe('Service: BarGroup', () => {
       expect(parsedBar.endPoint).toEqual(1);
     }));
 
-    it('should not limit points to [0,1]', inject([BarGroupService], (service: BarGroupService) => {
+    it('should not limit points to [0,1]', inject([BarService], (service: BarService) => {
       service.endDate = day100;
       service.startDate = day0;
 
@@ -102,7 +102,7 @@ describe('Service: BarGroup', () => {
     }));
 
 
-    it('should hide if out of service range', inject([BarGroupService], (service: BarGroupService) => {
+    it('should hide if out of service range', inject([BarService], (service: BarService) => {
       service.endDate = day100;
       service.startDate = day0;
 

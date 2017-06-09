@@ -24,4 +24,8 @@ export class Bar {
       this.endDate = options.startDate;
     }
   }
+
+  get width() {
+    return this.endPoint - this.startPoint;
+  }
 }
